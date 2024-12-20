@@ -1,0 +1,130 @@
+# .gitignore
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environment
+venv/
+env/
+ENV/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Logs and databases
+*.log
+*.sqlite
+*.db
+
+# Testing
+.coverage
+htmlcov/
+.pytest_cache/
+
+# Project specific
+plugins/*
+!plugins/.gitkeep
+configs/*
+!configs/.gitkeep
+
+# README.md
+# Model Processing Application
+
+A Python-based MVVM application for model processing with plugin support.
+
+## Setup
+
+1. Clone the repository
+```bash
+git clone <repository-url>
+cd model-processing-app
+```
+
+2. Create and activate virtual environment
+```bash
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+```
+
+3. Install dependencies
+```bash
+pip install -r requirements.txt
+```
+
+4. Run the application
+```bash
+python src/main.py
+```
+
+## Project Structure
+
+```
+model_processing_app/
+├── src/
+│   ├── core/            # Business logic, interfaces
+│   ├── infrastructure/  # MWLL, plugins, monitoring
+│   ├── presentation/    # MVVM implementation
+│   └── application/     # App shell
+├── tests/
+├── plugins/
+└── configs/
+```
+
+## Development
+
+- Follow PEP 8 style guide
+- Write tests for new features
+- Update requirements.txt when adding dependencies
+- Document significant changes
+
+## Features
+
+- MVVM Architecture
+- Middleware Logging Layer (MWLL)
+- Plugin System
+- Async Monitoring
+- Educational UI
+
+# .pre-commit-config.yaml
+repos:
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.4.0
+    hooks:
+    -   id: trailing-whitespace
+    -   id: end-of-file-fixer
+    -   id: check-yaml
+    -   id: check-added-large-files
+    -   id: debug-statements
+
+-   repo: https://github.com/psf/black
+    rev: 23.3.0
+    hooks:
+    -   id: black
+        language_version: python3
+
+-   repo: https://github.com/pycqa/flake8
+    rev: 6.0.0
+    hooks:
+    -   id: flake8
+        additional_dependencies: [flake8-docstrings]
