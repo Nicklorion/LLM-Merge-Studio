@@ -7,7 +7,7 @@ class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
         self.setWindowTitle("LLM Merge Studio")
-        self.setGeometry(100,100,  800, 600)
+        self.setGeometry(100, 100, 800,600)
         
         # Central widget still have to get used on the name Widget, for me it is synonym for useless garbage to adorn something with
         central_widget = QWidget()
